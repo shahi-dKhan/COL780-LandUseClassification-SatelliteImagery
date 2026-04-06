@@ -1,0 +1,1285 @@
+Hierarchical Hyperparameter Search & Baseline Logs
+============================================================
+STAGE 1: BASELINE (CE Loss)
+Learning Rate: 0.0001 | Test AUC: 0.9995 | F1: 0.9834 | Acc: 0.9837
+
+--- PLOT DATA FOR REPORT ---
+Epochs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Train_Losses: ['0.2218', '0.0841', '0.0526', '0.0446', '0.0329', '0.0260', '0.0285', '0.0233', '0.0167', '0.0203']
+Val_AUCs: ['0.9996', '0.9994', '0.9994', '0.9995', '0.9995', '0.9993', '0.9995', '0.9995', '0.9995', '0.9996']
+------------------------------------------------------------
+
+STAGE 2: FOCAL LOSS SEARCH
+Alpha	Gamma	Test_AUC	Test_F1
+----------------------------------------
+0.25	1.0	0.9995		0.9789
+0.25	2.0	0.9997		0.9843
+0.25	5.0	0.9995		0.9841
+0.5	1.0	0.9995		0.9829
+0.5	2.0	0.9994		0.9808
+0.5	5.0	0.9994		0.9775
+1.0	1.0	0.9993		0.9797
+1.0	2.0	0.9992		0.9788
+1.0	5.0	0.9993		0.9820
+
+STAGE 3: SCHEDULER ABLATION
+Used: LR=0.0001, Alpha=0.25, Gamma=2.0
+No Scheduler (From Stage 2) -> AUC: 0.9997
+With Scheduler -> AUC: 0.9994 | F1: 0.9859
+
+
+ to analyze traffic.
+Learn more
+OK, Got it.
+Shahid560 · 4h ago · 1 view · Private
+LandUse
+
+Share
+
+Edit
+
+Download
+Logs
+Running for 13242.6s
+Accelerator
+GPU T4 x2
+
+Environment
+Latest Container Image
+
+Output
+0 B
+
+Time
+#
+Log Message
+6.0s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	2	0.00s - to python to disable frozen modules.
+6.0s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	6	0.00s - to python to disable frozen modules.
+6.6s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	8	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	9	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	10	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	11	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	12	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	13	
+20.0s	14	
+19.6s	15	
+19.6s	16	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	17	Using CUDA
+19.7s	18	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	19	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	20	Saving a new model
+157.1s	21	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	22	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	23	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	24	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	25	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	26	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	27	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	28	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	29	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	30	Saving a new model
+705.8s	31	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	32	
+705.8s	33	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	34	Testing Alpha=0.25, Gamma=1.0...
+705.8s	35	Using CUDA
+774.6s	36	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	37	Saving a new model
+842.5s	38	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	39	Saving a new model
+912.8s	40	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	41	Saving a new model
+985.4s	42	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	43	Saving a new model
+1060.0s	44	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	45	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	46	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	47	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	48	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	49	Saving a new model
+1401.8s	50	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	51	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	52	Using CUDA
+1478.1s	53	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	54	Saving a new model
+1545.7s	55	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	56	Saving a new model
+1612.9s	57	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	58	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+6.0s	59	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	60	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	61	0.00s - to python to disable frozen modules.
+6.0s	62	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	63	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	64	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	65	0.00s - to python to disable frozen modules.
+6.6s	66	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	67	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	68	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	69	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	70	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	71	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	72	
+20.0s	73	
+19.6s	74	
+19.6s	75	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	76	Using CUDA
+19.7s	77	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	78	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	79	Saving a new model
+157.1s	80	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	81	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	82	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	83	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	84	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	85	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	86	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	87	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	88	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	89	Saving a new model
+705.8s	90	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	91	
+705.8s	92	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	93	Testing Alpha=0.25, Gamma=1.0...
+705.8s	94	Using CUDA
+774.6s	95	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	96	Saving a new model
+842.5s	97	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	98	Saving a new model
+912.8s	99	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	100	Saving a new model
+985.4s	101	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	102	Saving a new model
+1060.0s	103	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	104	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	105	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	106	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	107	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	108	Saving a new model
+1401.8s	109	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	110	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	111	Using CUDA
+1478.1s	112	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	113	Saving a new model
+1545.7s	114	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	115	Saving a new model
+1612.9s	116	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	117	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	118	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	119	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	120	Saving a new model
+1882.5s	121	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+6.0s	122	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	123	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	124	0.00s - to python to disable frozen modules.
+6.0s	125	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	126	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	127	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	128	0.00s - to python to disable frozen modules.
+6.6s	129	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	130	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	131	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	132	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	133	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	134	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	135	
+20.0s	136	
+19.6s	137	
+19.6s	138	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	139	Using CUDA
+19.7s	140	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	141	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	142	Saving a new model
+157.1s	143	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	144	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	145	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	146	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	147	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	148	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	149	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	150	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	151	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	152	Saving a new model
+705.8s	153	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	154	
+705.8s	155	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	156	Testing Alpha=0.25, Gamma=1.0...
+705.8s	157	Using CUDA
+774.6s	158	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	159	Saving a new model
+842.5s	160	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	161	Saving a new model
+912.8s	162	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	163	Saving a new model
+985.4s	164	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	165	Saving a new model
+1060.0s	166	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	167	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	168	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	169	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	170	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	171	Saving a new model
+1401.8s	172	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	173	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	174	Using CUDA
+1478.1s	175	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	176	Saving a new model
+1545.7s	177	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	178	Saving a new model
+1612.9s	179	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	180	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	181	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	182	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	183	Saving a new model
+1882.5s	184	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	185	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+6.0s	186	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	187	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	188	0.00s - to python to disable frozen modules.
+6.0s	189	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	190	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	191	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	192	0.00s - to python to disable frozen modules.
+6.6s	193	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	194	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	195	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	196	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	197	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	198	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	199	
+20.0s	200	
+19.6s	201	
+19.6s	202	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	203	Using CUDA
+19.7s	204	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	205	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	206	Saving a new model
+157.1s	207	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	208	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	209	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	210	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	211	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	212	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	213	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	214	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	215	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	216	Saving a new model
+705.8s	217	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	218	
+705.8s	219	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	220	Testing Alpha=0.25, Gamma=1.0...
+705.8s	221	Using CUDA
+774.6s	222	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	223	Saving a new model
+842.5s	224	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	225	Saving a new model
+912.8s	226	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	227	Saving a new model
+985.4s	228	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	229	Saving a new model
+1060.0s	230	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	231	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	232	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	233	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	234	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	235	Saving a new model
+1401.8s	236	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	237	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	238	Using CUDA
+1478.1s	239	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	240	Saving a new model
+1545.7s	241	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	242	Saving a new model
+1612.9s	243	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	244	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	245	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	246	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	247	Saving a new model
+1882.5s	248	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	249	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	250	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+6.0s	251	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	252	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	253	0.00s - to python to disable frozen modules.
+6.0s	254	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	255	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	256	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	257	0.00s - to python to disable frozen modules.
+6.6s	258	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	259	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	260	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	261	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	262	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	263	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	264	
+20.0s	265	
+19.6s	266	
+19.6s	267	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	268	Using CUDA
+19.7s	269	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	270	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	271	Saving a new model
+157.1s	272	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	273	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	274	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	275	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	276	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	277	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	278	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	279	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	280	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	281	Saving a new model
+705.8s	282	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	283	
+705.8s	284	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	285	Testing Alpha=0.25, Gamma=1.0...
+705.8s	286	Using CUDA
+774.6s	287	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	288	Saving a new model
+842.5s	289	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	290	Saving a new model
+912.8s	291	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	292	Saving a new model
+985.4s	293	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	294	Saving a new model
+1060.0s	295	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	296	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	297	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	298	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	299	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	300	Saving a new model
+1401.8s	301	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	302	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	303	Using CUDA
+1478.1s	304	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	305	Saving a new model
+1545.7s	306	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	307	Saving a new model
+1612.9s	308	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	309	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	310	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	311	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	312	Saving a new model
+1882.5s	313	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	314	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	315	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	316	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	317	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	318	Using CUDA
+6.0s	319	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	320	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	321	0.00s - to python to disable frozen modules.
+6.0s	322	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	323	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	324	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	325	0.00s - to python to disable frozen modules.
+6.6s	326	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	327	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	328	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	329	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	330	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	331	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	332	
+20.0s	333	
+19.6s	334	
+19.6s	335	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	336	Using CUDA
+19.7s	337	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	338	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	339	Saving a new model
+157.1s	340	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	341	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	342	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	343	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	344	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	345	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	346	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	347	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	348	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	349	Saving a new model
+705.8s	350	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	351	
+705.8s	352	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	353	Testing Alpha=0.25, Gamma=1.0...
+705.8s	354	Using CUDA
+774.6s	355	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	356	Saving a new model
+842.5s	357	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	358	Saving a new model
+912.8s	359	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	163	Saving a new model
+985.4s	164	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	165	Saving a new model
+1060.0s	166	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	167	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	168	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	169	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	170	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	171	Saving a new model
+1401.8s	172	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	173	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	174	Using CUDA
+1478.1s	175	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	176	Saving a new model
+1545.7s	177	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	178	Saving a new model
+1612.9s	179	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	180	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	181	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	182	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	183	Saving a new model
+1882.5s	184	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	185	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+6.0s	186	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	187	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	188	0.00s - to python to disable frozen modules.
+6.0s	189	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	190	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	191	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	192	0.00s - to python to disable frozen modules.
+6.6s	193	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	194	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	195	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	196	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	197	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	198	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	199	
+20.0s	200	
+19.6s	201	
+19.6s	202	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	203	Using CUDA
+19.7s	204	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	205	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	206	Saving a new model
+157.1s	207	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	208	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	209	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	210	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	211	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	212	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	213	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	214	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	215	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	216	Saving a new model
+705.8s	217	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	218	
+705.8s	219	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	220	Testing Alpha=0.25, Gamma=1.0...
+705.8s	221	Using CUDA
+774.6s	222	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	223	Saving a new model
+842.5s	224	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	225	Saving a new model
+912.8s	226	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	227	Saving a new model
+985.4s	228	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	229	Saving a new model
+1060.0s	230	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	231	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	232	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	233	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	234	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	235	Saving a new model
+1401.8s	236	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	237	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	238	Using CUDA
+1478.1s	239	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	240	Saving a new model
+1545.7s	241	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	242	Saving a new model
+1612.9s	243	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	244	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	245	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	246	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	247	Saving a new model
+1882.5s	248	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	249	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	250	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+6.0s	251	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	252	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	253	0.00s - to python to disable frozen modules.
+6.0s	254	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	255	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	256	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	257	0.00s - to python to disable frozen modules.
+6.6s	258	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	259	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	260	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	261	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	262	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	263	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	264	
+20.0s	265	
+19.6s	266	
+19.6s	267	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	268	Using CUDA
+19.7s	269	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	270	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	271	Saving a new model
+157.1s	272	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	273	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	274	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	275	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	276	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	277	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	278	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	279	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	280	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	281	Saving a new model
+705.8s	282	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	283	
+705.8s	284	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	285	Testing Alpha=0.25, Gamma=1.0...
+705.8s	286	Using CUDA
+774.6s	287	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	288	Saving a new model
+842.5s	289	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	290	Saving a new model
+912.8s	291	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	292	Saving a new model
+985.4s	293	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	294	Saving a new model
+1060.0s	295	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	296	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	297	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	298	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	299	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	300	Saving a new model
+1401.8s	301	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	302	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	303	Using CUDA
+1478.1s	304	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	305	Saving a new model
+1545.7s	306	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	307	Saving a new model
+1612.9s	308	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	309	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	310	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	311	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	312	Saving a new model
+1882.5s	313	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	314	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	315	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	316	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	317	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	318	Using CUDA
+6.0s	319	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	320	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	321	0.00s - to python to disable frozen modules.
+6.0s	322	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	323	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	324	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	325	0.00s - to python to disable frozen modules.
+6.6s	326	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	327	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	328	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	329	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	330	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	331	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	332	
+20.0s	333	
+19.6s	334	
+19.6s	335	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	336	Using CUDA
+19.7s	337	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	338	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	339	Saving a new model
+157.1s	340	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	341	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	342	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	343	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	344	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	345	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	346	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	347	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	348	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	349	Saving a new model
+705.8s	350	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	351	
+705.8s	352	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	353	Testing Alpha=0.25, Gamma=1.0...
+705.8s	354	Using CUDA
+774.6s	355	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	356	Saving a new model
+842.5s	357	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	358	Saving a new model
+912.8s	359	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	360	Saving a new model
+985.4s	361	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	362	Saving a new model
+1060.0s	363	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	364	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	365	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	366	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	367	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	368	Saving a new model
+1401.8s	369	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	370	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	371	Using CUDA
+1478.1s	372	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	373	Saving a new model
+1545.7s	374	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	375	Saving a new model
+1612.9s	376	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	377	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	378	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	379	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	380	Saving a new model
+1882.5s	381	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	382	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	383	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	384	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	385	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	386	Using CUDA
+2156.3s	387	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	388	Saving a new model
+2224.5s	389	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	390	Saving a new model
+2294.2s	391	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	392	Saving a new model
+6.0s	393	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	394	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	395	0.00s - to python to disable frozen modules.
+6.0s	396	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	397	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	398	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	399	0.00s - to python to disable frozen modules.
+6.6s	400	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	401	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	402	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	403	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	404	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	405	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	406	
+20.0s	407	
+19.6s	408	
+19.6s	409	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	410	Using CUDA
+19.7s	411	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	412	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	413	Saving a new model
+157.1s	414	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	415	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	416	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	417	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	418	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	419	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	420	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	421	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	422	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	423	Saving a new model
+705.8s	424	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	425	
+705.8s	426	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	427	Testing Alpha=0.25, Gamma=1.0...
+705.8s	428	Using CUDA
+774.6s	429	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	430	Saving a new model
+842.5s	431	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	432	Saving a new model
+912.8s	433	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	434	Saving a new model
+985.4s	435	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	436	Saving a new model
+1060.0s	437	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	438	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	439	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	440	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	441	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	442	Saving a new model
+1401.8s	443	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	444	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	445	Using CUDA
+1478.1s	446	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	447	Saving a new model
+1545.7s	448	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	449	Saving a new model
+1612.9s	450	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	451	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	452	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	453	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	454	Saving a new model
+1882.5s	455	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	456	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	457	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	458	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	459	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	460	Using CUDA
+2156.3s	461	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	462	Saving a new model
+2224.5s	463	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	464	Saving a new model
+2294.2s	465	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	466	Saving a new model
+6.0s	467	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	468	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	469	0.00s - to python to disable frozen modules.
+6.0s	470	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	471	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	472	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	473	0.00s - to python to disable frozen modules.
+6.6s	474	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	475	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	476	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	477	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	478	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	479	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	480	
+20.0s	481	
+19.6s	482	
+19.6s	483	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	484	Using CUDA
+19.7s	485	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	486	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	487	Saving a new model
+157.1s	488	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	489	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	490	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	491	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	492	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	493	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	494	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	495	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	496	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	497	Saving a new model
+705.8s	498	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	499	
+705.8s	500	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	501	Testing Alpha=0.25, Gamma=1.0...
+705.8s	502	Using CUDA
+774.6s	503	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	504	Saving a new model
+842.5s	505	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	506	Saving a new model
+912.8s	507	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	508	Saving a new model
+985.4s	509	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	510	Saving a new model
+1060.0s	511	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	512	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	513	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	514	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	515	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	516	Saving a new model
+1401.8s	517	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	518	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	519	Using CUDA
+1478.1s	520	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	521	Saving a new model
+1545.7s	522	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	523	Saving a new model
+1612.9s	524	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	525	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	526	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	527	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	528	Saving a new model
+1882.5s	529	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	530	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	531	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	532	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	533	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	534	Using CUDA
+2156.3s	535	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	536	Saving a new model
+2224.5s	537	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	538	Saving a new model
+2294.2s	539	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	540	Saving a new model
+2362.1s	541	Epoch 4/10 | Loss: 0.0020 | Val AUC: 0.9992
+2429.5s	542	Epoch 5/10 | Loss: 0.0020 | Val AUC: 0.9990
+6.0s	543	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	544	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	545	0.00s - to python to disable frozen modules.
+6.0s	546	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	547	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	548	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	549	0.00s - to python to disable frozen modules.
+6.6s	550	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	551	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	552	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	553	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	554	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	555	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	556	
+20.0s	557	
+19.6s	558	
+19.6s	559	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	560	Using CUDA
+19.7s	561	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	562	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	563	Saving a new model
+157.1s	564	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	565	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	566	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	567	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	568	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	569	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	570	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	571	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	572	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	573	Saving a new model
+705.8s	574	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	575	
+705.8s	576	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	577	Testing Alpha=0.25, Gamma=1.0...
+705.8s	578	Using CUDA
+774.6s	579	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	580	Saving a new model
+842.5s	581	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	582	Saving a new model
+912.8s	583	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	584	Saving a new model
+985.4s	585	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	586	Saving a new model
+1060.0s	587	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	588	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	589	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	590	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	591	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	592	Saving a new model
+1401.8s	593	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	594	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	595	Using CUDA
+1478.1s	596	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	597	Saving a new model
+1545.7s	598	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	599	Saving a new model
+1612.9s	600	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	601	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	602	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	603	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	604	Saving a new model
+1882.5s	605	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	606	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	607	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	608	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	609	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	610	Using CUDA
+2156.3s	611	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	612	Saving a new model
+2224.5s	613	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	614	Saving a new model
+2294.2s	615	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	616	Saving a new model
+2362.1s	617	Epoch 4/10 | Loss: 0.0020 | Val AUC: 0.9992
+2429.5s	618	Epoch 5/10 | Loss: 0.0020 | Val AUC: 0.9990
+2497.2s	619	Epoch 6/10 | Loss: 0.0030 | Val AUC: 0.9991
+2564.6s	620	Epoch 7/10 | Loss: 0.0020 | Val AUC: 0.9995
+2564.6s	621	Saving a new model
+2632.7s	622	Epoch 8/10 | Loss: 0.0011 | Val AUC: 0.9996
+2632.7s	623	Saving a new model
+6.0s	624	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	625	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	626	0.00s - to python to disable frozen modules.
+6.0s	627	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	628	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	629	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	630	0.00s - to python to disable frozen modules.
+6.6s	631	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	632	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	633	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	634	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	635	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	636	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	637	
+20.0s	638	
+19.6s	639	
+19.6s	640	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	641	Using CUDA
+19.7s	642	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	643	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	644	Saving a new model
+157.1s	645	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	646	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	647	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	648	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	649	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	650	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	651	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	652	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	653	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	654	Saving a new model
+705.8s	655	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	656	
+705.8s	657	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	658	Testing Alpha=0.25, Gamma=1.0...
+705.8s	659	Using CUDA
+774.6s	660	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	661	Saving a new model
+842.5s	662	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	663	Saving a new model
+912.8s	664	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	665	Saving a new model
+985.4s	666	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	667	Saving a new model
+1060.0s	668	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	669	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	670	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	671	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	672	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	673	Saving a new model
+1401.8s	674	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	675	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	676	Using CUDA
+1478.1s	677	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	678	Saving a new model
+1545.7s	679	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	680	Saving a new model
+1612.9s	681	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	682	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	683	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	684	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	685	Saving a new model
+1882.5s	686	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	687	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	688	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	689	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	690	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	691	Using CUDA
+2156.3s	692	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	693	Saving a new model
+2224.5s	694	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	695	Saving a new model
+2294.2s	696	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	697	Saving a new model
+2362.1s	698	Epoch 4/10 | Loss: 0.0020 | Val AUC: 0.9992
+2429.5s	699	Epoch 5/10 | Loss: 0.0020 | Val AUC: 0.9990
+2497.2s	700	Epoch 6/10 | Loss: 0.0030 | Val AUC: 0.9991
+2564.6s	701	Epoch 7/10 | Loss: 0.0020 | Val AUC: 0.9995
+2564.6s	702	Saving a new model
+2632.7s	703	Epoch 8/10 | Loss: 0.0011 | Val AUC: 0.9996
+2632.7s	704	Saving a new model
+2702.8s	705	Epoch 9/10 | Loss: 0.0008 | Val AUC: 0.9996
+6.0s	706	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s	707	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s	708	0.00s - to python to disable frozen modules.
+6.0s	709	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s	710	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s	711	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s	712	0.00s - to python to disable frozen modules.
+6.6s	713	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+19.7s	714	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+19.8s	715	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+19.9s	716	
+ 38%|███▊      | 16.9M/44.7M [00:00<00:00, 176MB/s]
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+20.0s	717	
+ 79%|███████▉  | 35.5M/44.7M [00:00<00:00, 187MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	718	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 189MB/s]
+20.0s	719	
+20.0s	720	
+19.6s	721	
+19.6s	722	--- STAGE 1: Baseline CE Run & Plot Data ---
+19.6s	723	Using CUDA
+19.7s	724	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+88.6s	725	Epoch 1/10 | Loss: 0.2218 | Val AUC: 0.9996
+88.6s	726	Saving a new model
+157.1s	727	Epoch 2/10 | Loss: 0.0841 | Val AUC: 0.9994
+224.5s	728	Epoch 3/10 | Loss: 0.0526 | Val AUC: 0.9994
+291.9s	729	Epoch 4/10 | Loss: 0.0446 | Val AUC: 0.9995
+359.3s	730	Epoch 5/10 | Loss: 0.0329 | Val AUC: 0.9995
+427.1s	731	Epoch 6/10 | Loss: 0.0260 | Val AUC: 0.9993
+495.6s	732	Epoch 7/10 | Loss: 0.0285 | Val AUC: 0.9995
+563.7s	733	Epoch 8/10 | Loss: 0.0233 | Val AUC: 0.9995
+631.1s	734	Epoch 9/10 | Loss: 0.0167 | Val AUC: 0.9995
+698.9s	735	Epoch 10/10 | Loss: 0.0203 | Val AUC: 0.9996
+698.9s	736	Saving a new model
+705.8s	737	Baseline (LR=0.0001) -> AUC: 0.9995 | F1: 0.9834
+705.8s	738	
+705.8s	739	--- STAGE 2: Focal Loss Parameters (Alpha/Gamma) ---
+705.8s	740	Testing Alpha=0.25, Gamma=1.0...
+705.8s	741	Using CUDA
+774.6s	742	Epoch 1/10 | Loss: 0.0385 | Val AUC: 0.9992
+774.6s	743	Saving a new model
+842.5s	744	Epoch 2/10 | Loss: 0.0122 | Val AUC: 0.9993
+842.5s	745	Saving a new model
+912.8s	746	Epoch 3/10 | Loss: 0.0079 | Val AUC: 0.9994
+912.8s	747	Saving a new model
+985.4s	748	Epoch 4/10 | Loss: 0.0057 | Val AUC: 0.9996
+985.4s	749	Saving a new model
+1060.0s	750	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9996
+1128.2s	751	Epoch 6/10 | Loss: 0.0052 | Val AUC: 0.9995
+1195.4s	752	Epoch 7/10 | Loss: 0.0055 | Val AUC: 0.9994
+1263.6s	753	Epoch 8/10 | Loss: 0.0037 | Val AUC: 0.9996
+1333.2s	754	Epoch 9/10 | Loss: 0.0036 | Val AUC: 0.9996
+1333.2s	755	Saving a new model
+1401.8s	756	Epoch 10/10 | Loss: 0.0028 | Val AUC: 0.9994
+1406.5s	757	Testing Alpha=0.25, Gamma=2.0...
+1406.5s	758	Using CUDA
+1478.1s	759	Epoch 1/10 | Loss: 0.0300 | Val AUC: 0.9989
+1478.1s	760	Saving a new model
+1545.7s	761	Epoch 2/10 | Loss: 0.0079 | Val AUC: 0.9996
+1545.7s	762	Saving a new model
+1612.9s	763	Epoch 3/10 | Loss: 0.0053 | Val AUC: 0.9995
+1680.1s	764	Epoch 4/10 | Loss: 0.0048 | Val AUC: 0.9993
+1747.8s	765	Epoch 5/10 | Loss: 0.0043 | Val AUC: 0.9993
+1815.2s	766	Epoch 6/10 | Loss: 0.0031 | Val AUC: 0.9997
+1815.2s	767	Saving a new model
+1882.5s	768	Epoch 7/10 | Loss: 0.0030 | Val AUC: 0.9991
+1949.8s	769	Epoch 8/10 | Loss: 0.0043 | Val AUC: 0.9995
+2017.2s	770	Epoch 9/10 | Loss: 0.0022 | Val AUC: 0.9994
+2084.7s	771	Epoch 10/10 | Loss: 0.0026 | Val AUC: 0.9996
+2088.7s	772	Testing Alpha=0.25, Gamma=5.0...
+2088.7s	773	Using CUDA
+2156.3s	774	Epoch 1/10 | Loss: 0.0152 | Val AUC: 0.9986
+2156.3s	775	Saving a new model
+2224.5s	776	Epoch 2/10 | Loss: 0.0047 | Val AUC: 0.9992
+2224.5s	777	Saving a new model
+2294.2s	778	Epoch 3/10 | Loss: 0.0026 | Val AUC: 0.9992
+2294.2s	779	Saving a new model
+2362.1s	780	Epoch 4/10 | Loss: 0.0020 | Val AUC: 0.9992
+2429.5s	781	Epoch 5/10 | Loss: 0.0020 | Val AUC: 0.9990
+2497.2s	782	Epoch 6/10 | Loss: 0.0030 | Val AUC: 0.9991
+2564.6s	783	Epoch 7/10 | Loss: 0.0020 | Val AUC: 0.9995
+2564.6s	784	Saving a new model
+2632.7s	785	Epoch 8/10 | Loss: 0.0011 | Val AUC: 0.9996
+2632.7s	786	Saving a new model
+2702.8s	787	Epoch 9/10 | Loss: 0.0008 | Val AUC: 0.9996
+2770.2s	788	Epoch 10/10 | Loss: 0.0016 | Val AUC: 0.9992
+2774.8s	789	Testing Alpha=0.5, Gamma=1.0...
+2774.8s	790	Using CUDA
+2842.7s	791	Epoch 1/10 | Loss: 0.0745 | Val AUC: 0.9993
+2842.7s	792	Saving a new model
+2910.2s	793	Epoch 2/10 | Loss: 0.0258 | Val AUC: 0.9994
+2910.2s	794	Saving a new model
+2977.6s	795	Epoch 3/10 | Loss: 0.0147 | Val AUC: 0.9994
+2977.6s	796	Saving a new model
+3045.3s	797	Epoch 4/10 | Loss: 0.0124 | Val AUC: 0.9991
+3113.4s	798	Epoch 5/10 | Loss: 0.0110 | Val AUC: 0.9994
+3181.4s	799	Epoch 6/10 | Loss: 0.0090 | Val AUC: 0.9997
+3181.4s	800	Saving a new model
+3248.7s	801	Epoch 7/10 | Loss: 0.0099 | Val AUC: 0.9989
+3316.0s	802	Epoch 8/10 | Loss: 0.0083 | Val AUC: 0.9996
+3383.4s	803	Epoch 9/10 | Loss: 0.0075 | Val AUC: 0.9997
+3383.4s	804	Saving a new model
+3450.9s	805	Epoch 10/10 | Loss: 0.0048 | Val AUC: 0.9997
+3450.9s	806	Saving a new model
+3455.3s	807	Testing Alpha=0.5, Gamma=2.0...
+3455.3s	808	Using CUDA
+3523.0s	809	Epoch 1/10 | Loss: 0.0543 | Val AUC: 0.9992
+3523.0s	810	Saving a new model
+3590.2s	811	Epoch 2/10 | Loss: 0.0170 | Val AUC: 0.9994
+3590.2s	812	Saving a new model
+3657.6s	813	Epoch 3/10 | Loss: 0.0111 | Val AUC: 0.9993
+3725.1s	814	Epoch 4/10 | Loss: 0.0093 | Val AUC: 0.9984
+3792.5s	815	Epoch 5/10 | Loss: 0.0085 | Val AUC: 0.9993
+3860.0s	816	Epoch 6/10 | Loss: 0.0078 | Val AUC: 0.9994
+3927.7s	817	Epoch 7/10 | Loss: 0.0063 | Val AUC: 0.9996
+3927.7s	818	Saving a new model
+3995.0s	819	Epoch 8/10 | Loss: 0.0047 | Val AUC: 0.9996
+3995.0s	820	Saving a new model
+4062.5s	821	Epoch 9/10 | Loss: 0.0066 | Val AUC: 0.9994
+4129.9s	822	Epoch 10/10 | Loss: 0.0063 | Val AUC: 0.9996
+4129.9s	823	Saving a new model
+4134.2s	824	Testing Alpha=0.5, Gamma=5.0...
+4134.2s	825	Using CUDA
+4201.9s	826	Epoch 1/10 | Loss: 0.0304 | Val AUC: 0.9983
+4201.9s	827	Saving a new model
+4271.2s	828	Epoch 2/10 | Loss: 0.0073 | Val AUC: 0.9992
+4271.2s	829	Saving a new model
+4379.8s	830	Epoch 3/10 | Loss: 0.0060 | Val AUC: 0.9989
+4460.4s	831	Epoch 4/10 | Loss: 0.0052 | Val AUC: 0.9992
+4544.8s	832	Epoch 5/10 | Loss: 0.0044 | Val AUC: 0.9992
+4626.4s	833	Epoch 6/10 | Loss: 0.0048 | Val AUC: 0.9995
+4626.4s	834	Saving a new model
+4694.8s	835	Epoch 7/10 | Loss: 0.0016 | Val AUC: 0.9997
+4694.8s	836	Saving a new model
+4762.2s	837	Epoch 8/10 | Loss: 0.0042 | Val AUC: 0.9995
+4829.6s	838	Epoch 9/10 | Loss: 0.0034 | Val AUC: 0.9993
+4897.1s	839	Epoch 10/10 | Loss: 0.0023 | Val AUC: 0.9990
+4901.5s	840	Testing Alpha=1.0, Gamma=1.0...
+4901.5s	841	Using CUDA
+4969.5s	842	Epoch 1/10 | Loss: 0.1530 | Val AUC: 0.9994
+4969.5s	843	Saving a new model
+5037.1s	844	Epoch 2/10 | Loss: 0.0506 | Val AUC: 0.9994
+5037.1s	845	Saving a new model
+5104.3s	846	Epoch 3/10 | Loss: 0.0285 | Val AUC: 0.9989
+5172.3s	847	Epoch 4/10 | Loss: 0.0250 | Val AUC: 0.9993
+5243.9s	848	Epoch 5/10 | Loss: 0.0211 | Val AUC: 0.9989
+5313.5s	849	Epoch 6/10 | Loss: 0.0215 | Val AUC: 0.9994
+5313.5s	850	Saving a new model
+5382.7s	851	Epoch 7/10 | Loss: 0.0176 | Val AUC: 0.9992
+5450.8s	852	Epoch 8/10 | Loss: 0.0150 | Val AUC: 0.9996
+5450.8s	853	Saving a new model
+5524.5s	854	Epoch 9/10 | Loss: 0.0136 | Val AUC: 0.9995
+5599.9s	855	Epoch 10/10 | Loss: 0.0151 | Val AUC: 0.9995
+5604.7s	856	Testing Alpha=1.0, Gamma=2.0...
+5604.7s	857	Using CUDA
+5677.5s	858	Epoch 1/10 | Loss: 0.1167 | Val AUC: 0.9993
+5677.5s	859	Saving a new model
+5745.9s	860	Epoch 2/10 | Loss: 0.0336 | Val AUC: 0.9994
+5745.9s	861	Saving a new model
+5814.9s	862	Epoch 3/10 | Loss: 0.0235 | Val AUC: 0.9995
+5814.9s	863	Saving a new model
+5883.2s	864	Epoch 4/10 | Loss: 0.0208 | Val AUC: 0.9994
+5951.1s	865	Epoch 5/10 | Loss: 0.0150 | Val AUC: 0.9995
+5951.1s	866	Saving a new model
+6018.7s	867	Epoch 6/10 | Loss: 0.0130 | Val AUC: 0.9995
+6086.1s	868	Epoch 7/10 | Loss: 0.0131 | Val AUC: 0.9996
+6086.1s	869	Saving a new model
+6153.7s	870	Epoch 8/10 | Loss: 0.0102 | Val AUC: 0.9994
+6221.0s	871	Epoch 9/10 | Loss: 0.0097 | Val AUC: 0.9993
+6288.5s	872	Epoch 10/10 | Loss: 0.0116 | Val AUC: 0.9996
+6288.5s	873	Saving a new model
+6292.5s	874	Testing Alpha=1.0, Gamma=5.0...
+6292.5s	875	Using CUDA
+6360.2s	876	Epoch 1/10 | Loss: 0.0617 | Val AUC: 0.9984
+6360.2s	877	Saving a new model
+6428.8s	878	Epoch 2/10 | Loss: 0.0145 | Val AUC: 0.9989
+6428.8s	879	Saving a new model
+6497.2s	880	Epoch 3/10 | Loss: 0.0108 | Val AUC: 0.9989
+6564.8s	881	Epoch 4/10 | Loss: 0.0123 | Val AUC: 0.9987
+6632.2s	882	Epoch 5/10 | Loss: 0.0079 | Val AUC: 0.9993
+6632.2s	883	Saving a new model
+6700.9s	884	Epoch 6/10 | Loss: 0.0065 | Val AUC: 0.9992
+6768.9s	885	Epoch 7/10 | Loss: 0.0087 | Val AUC: 0.9992
+6836.5s	886	Epoch 8/10 | Loss: 0.0050 | Val AUC: 0.9997
+6836.5s	887	Saving a new model
+6904.2s	888	Epoch 9/10 | Loss: 0.0065 | Val AUC: 0.9996
+6972.3s	889	Epoch 10/10 | Loss: 0.0074 | Val AUC: 0.9994
+6976.7s	890	Stage 2 Winner: Alpha=0.25, Gamma=2.0
+6976.7s	891	
+6976.7s	892	--- STAGE 3: Testing Scheduler ---
+6976.7s	893	Using Best Params: LR=0.0001, Alpha=0.25, Gamma=2.0
+6976.7s	894	Using CUDA
+7044.3s	895	Epoch 1/10 | Loss: 0.0288 | Val AUC: 0.9993
+7044.3s	896	Saving a new model
+7112.1s	897	Epoch 2/10 | Loss: 0.0085 | Val AUC: 0.9995
+7112.1s	898	Saving a new model
+7211.8s	899	Epoch 3/10 | Loss: 0.0052 | Val AUC: 0.9984
+7293.6s	900	Epoch 4/10 | Loss: 0.0044 | Val AUC: 0.9995
+7361.1s	901	Epoch 5/10 | Loss: 0.0040 | Val AUC: 0.9994
+7429.3s	902	Epoch 6/10 | Loss: 0.0014 | Val AUC: 0.9998
+7429.3s	903	Saving a new model
+7496.8s	904	Epoch 7/10 | Loss: 0.0006 | Val AUC: 0.9998
+7496.8s	905	Saving a new model
+7564.0s	906	Epoch 8/10 | Loss: 0.0004 | Val AUC: 0.9998
+7653.5s	907	Epoch 9/10 | Loss: 0.0004 | Val AUC: 0.9998
+7727.3s	908	Epoch 10/10 | Loss: 0.0004 | Val AUC: 0.9998
+7727.3s	909	Saving a new model
+7732.6s	910	
+7732.6s	911	✅ Hierarchical Search Complete! Check 'hierarchical_search_results.txt' for logs and plot data.
+7738.5s	912	/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+7738.5s	913	  cells[i][c] = re.sub('\\\\\|', '|', cell)
+7738.7s	914	/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+7738.7s	915	  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+7739.2s	916	[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+7739.5s	917	[NbConvertApp] Writing 29352 bytes to __notebook__.ipynb
+7741.8s	918	[NbConvertApp] Converting notebook __notebook__.ipynb to html
+7742.7s	919	[NbConvertApp] Writing 340370 bytes to __results__.html
+

@@ -1,0 +1,755 @@
+Skip to
+content
+Kaggle
+
+Create
+Home
+
+Competitions
+
+Datasets
+
+Models
+
+Benchmarks
+
+Game Arena
+
+Code
+
+Discussions
+
+Learn
+
+More
+
+Your Work
+
+
+Viewed
+
+lSnE_landUse
+
+
+LandUseClassification
+
+
+LandUse
+
+
+CMI - Detect Behavior with Sensor Data
+
+
+OpenAI to Z Challenge
+
+
+Edited
+
+lSnE_landUse
+
+
+LandUse
+
+
+notebook67fedcf20e
+
+
+notebook21f7dd98be
+
+
+notebook9e7e066dab
+
+
+View Active Events
+
+Search
+
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+Shahid560 · 1d ago · 2 views · Private
+lSnE_landUse
+
+Share
+
+Edit
+
+Download
+Logs
+Running for 102766.5s
+Accelerator
+GPU T4 x2
+
+Environment
+Latest Container Image
+
+Output
+0 B
+
+Time
+#
+Log Message
+9.7s	0	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	1	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	2	0.00s - to python to disable frozen modules.
+9.7s	3	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	4	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	5	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	6	0.00s - to python to disable frozen modules.
+10.4s	7	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.4s	8	
+30.4s	9	======================================================================
+30.4s	10	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	11	======================================================================
+30.4s	12	Using CUDA
+30.6s	13	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+30.6s	14	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	15	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	16	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	17	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	18	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	19	
+30.9s	20	
+92.6s	21	
+92.6s	22	Epoch 1/10, Loss: 0.2637
+92.6s	23	Validation Metrics:
+103.3s	24	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	25	  ✓ Best model saved (AUC: 0.9994)
+9.7s	26	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	27	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	28	0.00s - to python to disable frozen modules.
+9.7s	29	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	30	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	31	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	32	0.00s - to python to disable frozen modules.
+10.4s	33	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	34	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	35	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	36	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	37	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	38	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	39	
+30.9s	40	
+30.4s	41	
+30.4s	42	======================================================================
+30.4s	43	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	44	======================================================================
+30.4s	45	Using CUDA
+30.6s	46	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	47	
+92.6s	48	Epoch 1/10, Loss: 0.2637
+92.6s	49	Validation Metrics:
+103.3s	50	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	51	  ✓ Best model saved (AUC: 0.9994)
+173.5s	52	
+173.5s	53	Epoch 2/10, Loss: 0.0831
+173.5s	54	Validation Metrics:
+181.1s	55	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	56	  ✓ Best model saved (AUC: 0.9996)
+251.0s	57	
+251.0s	58	Epoch 3/10, Loss: 0.0564
+251.0s	59	Validation Metrics:
+259.0s	60	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	61	
+328.8s	62	Epoch 4/10, Loss: 0.0498
+328.8s	63	Validation Metrics:
+337.0s	64	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	65	
+407.3s	66	Epoch 5/10, Loss: 0.0275
+407.3s	67	Validation Metrics:
+414.9s	68	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	69	
+485.3s	70	Epoch 6/10, Loss: 0.0326
+485.3s	71	Validation Metrics:
+493.0s	72	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	73	
+563.4s	74	Epoch 7/10, Loss: 0.0248
+563.4s	75	Validation Metrics:
+571.0s	76	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+9.7s	77	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	78	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	79	0.00s - to python to disable frozen modules.
+9.7s	80	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	81	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	82	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	83	0.00s - to python to disable frozen modules.
+10.4s	84	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	85	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	86	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	87	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	88	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	89	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	90	
+30.9s	91	
+30.4s	92	
+30.4s	93	======================================================================
+30.4s	94	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	95	======================================================================
+30.4s	96	Using CUDA
+30.6s	97	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	98	
+92.6s	99	Epoch 1/10, Loss: 0.2637
+92.6s	100	Validation Metrics:
+103.3s	101	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	102	  ✓ Best model saved (AUC: 0.9994)
+173.5s	103	
+173.5s	104	Epoch 2/10, Loss: 0.0831
+173.5s	105	Validation Metrics:
+181.1s	106	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	107	  ✓ Best model saved (AUC: 0.9996)
+251.0s	108	
+251.0s	109	Epoch 3/10, Loss: 0.0564
+251.0s	110	Validation Metrics:
+259.0s	111	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	112	
+328.8s	113	Epoch 4/10, Loss: 0.0498
+328.8s	114	Validation Metrics:
+337.0s	115	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	116	
+407.3s	117	Epoch 5/10, Loss: 0.0275
+407.3s	118	Validation Metrics:
+414.9s	119	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	120	
+485.3s	121	Epoch 6/10, Loss: 0.0326
+485.3s	122	Validation Metrics:
+493.0s	123	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	124	
+563.4s	125	Epoch 7/10, Loss: 0.0248
+563.4s	126	Validation Metrics:
+571.0s	127	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+9.7s	128	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	129	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	130	0.00s - to python to disable frozen modules.
+9.7s	131	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	132	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	133	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	134	0.00s - to python to disable frozen modules.
+10.4s	135	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	136	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	137	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	138	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	139	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	140	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	141	
+30.9s	142	
+30.4s	143	
+30.4s	144	======================================================================
+30.4s	145	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	146	======================================================================
+30.4s	147	Using CUDA
+30.6s	148	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	149	
+92.6s	150	Epoch 1/10, Loss: 0.2637
+92.6s	151	Validation Metrics:
+103.3s	152	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	153	  ✓ Best model saved (AUC: 0.9994)
+173.5s	154	
+173.5s	155	Epoch 2/10, Loss: 0.0831
+173.5s	156	Validation Metrics:
+181.1s	157	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	158	  ✓ Best model saved (AUC: 0.9996)
+251.0s	159	
+251.0s	160	Epoch 3/10, Loss: 0.0564
+251.0s	161	Validation Metrics:
+259.0s	162	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	163	
+328.8s	164	Epoch 4/10, Loss: 0.0498
+328.8s	165	Validation Metrics:
+337.0s	166	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	167	
+407.3s	168	Epoch 5/10, Loss: 0.0275
+407.3s	169	Validation Metrics:
+414.9s	170	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	171	
+485.3s	172	Epoch 6/10, Loss: 0.0326
+485.3s	173	Validation Metrics:
+493.0s	174	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	175	
+563.4s	176	Epoch 7/10, Loss: 0.0248
+563.4s	177	Validation Metrics:
+571.0s	178	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+640.8s	179	
+640.8s	180	Epoch 8/10, Loss: 0.0179
+640.8s	181	Validation Metrics:
+648.5s	182	  F1: 0.9744, AUC: 0.9992, Acc: 0.9754
+9.7s	183	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	184	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	185	0.00s - to python to disable frozen modules.
+9.7s	186	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	187	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	188	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	189	0.00s - to python to disable frozen modules.
+10.4s	190	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	191	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	192	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	193	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	194	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	195	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	196	
+30.9s	197	
+30.4s	198	
+30.4s	199	======================================================================
+30.4s	200	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	201	======================================================================
+30.4s	202	Using CUDA
+30.6s	203	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	204	
+92.6s	205	Epoch 1/10, Loss: 0.2637
+92.6s	206	Validation Metrics:
+103.3s	207	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	208	  ✓ Best model saved (AUC: 0.9994)
+173.5s	209	
+173.5s	210	Epoch 2/10, Loss: 0.0831
+173.5s	211	Validation Metrics:
+181.1s	212	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	213	  ✓ Best model saved (AUC: 0.9996)
+251.0s	214	
+251.0s	215	Epoch 3/10, Loss: 0.0564
+251.0s	216	Validation Metrics:
+259.0s	217	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	218	
+328.8s	219	Epoch 4/10, Loss: 0.0498
+328.8s	220	Validation Metrics:
+337.0s	221	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	222	
+407.3s	223	Epoch 5/10, Loss: 0.0275
+407.3s	224	Validation Metrics:
+414.9s	225	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	226	
+485.3s	227	Epoch 6/10, Loss: 0.0326
+485.3s	228	Validation Metrics:
+493.0s	229	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	230	
+563.4s	231	Epoch 7/10, Loss: 0.0248
+563.4s	232	Validation Metrics:
+571.0s	233	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+640.8s	234	
+640.8s	235	Epoch 8/10, Loss: 0.0179
+640.8s	236	Validation Metrics:
+648.5s	237	  F1: 0.9744, AUC: 0.9992, Acc: 0.9754
+718.4s	238	
+718.4s	239	Epoch 9/10, Loss: 0.0286
+718.4s	240	Validation Metrics:
+726.0s	241	  F1: 0.9777, AUC: 0.9996, Acc: 0.9781
+796.5s	242	
+796.5s	243	Epoch 10/10, Loss: 0.0187
+796.5s	244	Validation Metrics:
+804.5s	245	  F1: 0.9784, AUC: 0.9997, Acc: 0.9793
+804.5s	246	  ✓ Best model saved (AUC: 0.9997)
+804.5s	247	
+804.5s	248	Final Test Metrics (Before Loading Best Model):
+810.4s	249	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+810.4s	250	
+810.4s	251	Loading best model...
+810.4s	252	
+810.4s	253	Final Test Metrics (Best Model):
+814.7s	254	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+814.7s	255	
+814.7s	256	✓ Baseline Results (LR=0.0001):
+814.7s	257	   AUC: 0.9996 | F1: 0.9829 | Accuracy: 0.9837
+814.7s	258	
+814.7s	259	======================================================================
+814.7s	260	STAGE 2: Ablation Study with FocalLoss
+814.7s	261	======================================================================
+814.7s	262	
+814.7s	263	Testing FocalLoss with Alpha=0.25, Gamma=1.0...
+814.7s	264	Using CUDA
+9.7s	265	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	266	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	267	0.00s - to python to disable frozen modules.
+9.7s	268	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	269	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	270	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	271	0.00s - to python to disable frozen modules.
+10.4s	272	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	273	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	274	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	275	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	276	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	277	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	278	
+30.9s	279	
+30.4s	280	
+30.4s	281	======================================================================
+30.4s	282	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	283	======================================================================
+30.4s	284	Using CUDA
+30.6s	285	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	286	
+92.6s	287	Epoch 1/10, Loss: 0.2637
+92.6s	288	Validation Metrics:
+103.3s	289	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	290	  ✓ Best model saved (AUC: 0.9994)
+173.5s	291	
+173.5s	292	Epoch 2/10, Loss: 0.0831
+173.5s	293	Validation Metrics:
+181.1s	294	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	295	  ✓ Best model saved (AUC: 0.9996)
+251.0s	296	
+251.0s	297	Epoch 3/10, Loss: 0.0564
+251.0s	298	Validation Metrics:
+259.0s	299	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	300	
+328.8s	301	Epoch 4/10, Loss: 0.0498
+328.8s	302	Validation Metrics:
+337.0s	303	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	304	
+407.3s	305	Epoch 5/10, Loss: 0.0275
+407.3s	306	Validation Metrics:
+414.9s	307	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	308	
+485.3s	309	Epoch 6/10, Loss: 0.0326
+485.3s	310	Validation Metrics:
+493.0s	311	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	312	
+563.4s	313	Epoch 7/10, Loss: 0.0248
+563.4s	314	Validation Metrics:
+571.0s	315	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+640.8s	316	
+640.8s	317	Epoch 8/10, Loss: 0.0179
+640.8s	318	Validation Metrics:
+648.5s	319	  F1: 0.9744, AUC: 0.9992, Acc: 0.9754
+718.4s	320	
+718.4s	321	Epoch 9/10, Loss: 0.0286
+718.4s	322	Validation Metrics:
+726.0s	323	  F1: 0.9777, AUC: 0.9996, Acc: 0.9781
+796.5s	324	
+796.5s	325	Epoch 10/10, Loss: 0.0187
+796.5s	326	Validation Metrics:
+804.5s	327	  F1: 0.9784, AUC: 0.9997, Acc: 0.9793
+804.5s	328	  ✓ Best model saved (AUC: 0.9997)
+804.5s	329	
+804.5s	330	Final Test Metrics (Before Loading Best Model):
+810.4s	331	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+810.4s	332	
+810.4s	333	Loading best model...
+810.4s	334	
+810.4s	335	Final Test Metrics (Best Model):
+814.7s	336	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+814.7s	337	
+814.7s	338	✓ Baseline Results (LR=0.0001):
+814.7s	339	   AUC: 0.9996 | F1: 0.9829 | Accuracy: 0.9837
+814.7s	340	
+814.7s	341	======================================================================
+814.7s	342	STAGE 2: Ablation Study with FocalLoss
+814.7s	343	======================================================================
+814.7s	344	
+814.7s	345	Testing FocalLoss with Alpha=0.25, Gamma=1.0...
+814.7s	346	Using CUDA
+885.0s	347	
+885.0s	348	Epoch 1/10, Loss: 0.0435
+885.0s	349	Validation Metrics:
+893.0s	350	  F1: 0.9607, AUC: 0.9994, Acc: 0.9619
+893.0s	351	  ✓ Best model saved (AUC: 0.9994)
+963.4s	352	
+963.4s	353	Epoch 2/10, Loss: 0.0137
+963.4s	354	Validation Metrics:
+971.6s	355	  F1: 0.9719, AUC: 0.9995, Acc: 0.9730
+971.6s	356	  ✓ Best model saved (AUC: 0.9995)
+9.7s	357	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	358	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	359	0.00s - to python to disable frozen modules.
+9.7s	360	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	361	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	362	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	363	0.00s - to python to disable frozen modules.
+10.4s	364	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	365	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	366	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	367	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	368	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	369	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	370	
+30.9s	371	
+30.4s	372	
+30.4s	373	======================================================================
+30.4s	374	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	375	======================================================================
+30.4s	376	Using CUDA
+30.6s	377	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	378	
+92.6s	379	Epoch 1/10, Loss: 0.2637
+92.6s	380	Validation Metrics:
+103.3s	381	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	382	  ✓ Best model saved (AUC: 0.9994)
+173.5s	383	
+173.5s	384	Epoch 2/10, Loss: 0.0831
+173.5s	385	Validation Metrics:
+181.1s	386	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	387	  ✓ Best model saved (AUC: 0.9996)
+251.0s	388	
+251.0s	389	Epoch 3/10, Loss: 0.0564
+251.0s	390	Validation Metrics:
+259.0s	391	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	392	
+328.8s	393	Epoch 4/10, Loss: 0.0498
+328.8s	394	Validation Metrics:
+337.0s	395	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	396	
+407.3s	397	Epoch 5/10, Loss: 0.0275
+407.3s	398	Validation Metrics:
+414.9s	399	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	400	
+485.3s	401	Epoch 6/10, Loss: 0.0326
+485.3s	402	Validation Metrics:
+493.0s	403	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	404	
+563.4s	405	Epoch 7/10, Loss: 0.0248
+563.4s	406	Validation Metrics:
+571.0s	407	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+640.8s	408	
+640.8s	409	Epoch 8/10, Loss: 0.0179
+640.8s	410	Validation Metrics:
+648.5s	411	  F1: 0.9744, AUC: 0.9992, Acc: 0.9754
+718.4s	412	
+718.4s	413	Epoch 9/10, Loss: 0.0286
+718.4s	414	Validation Metrics:
+726.0s	415	  F1: 0.9777, AUC: 0.9996, Acc: 0.9781
+796.5s	416	
+796.5s	417	Epoch 10/10, Loss: 0.0187
+796.5s	418	Validation Metrics:
+804.5s	419	  F1: 0.9784, AUC: 0.9997, Acc: 0.9793
+804.5s	420	  ✓ Best model saved (AUC: 0.9997)
+804.5s	421	
+804.5s	422	Final Test Metrics (Before Loading Best Model):
+810.4s	423	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+810.4s	424	
+810.4s	425	Loading best model...
+810.4s	426	
+810.4s	427	Final Test Metrics (Best Model):
+814.7s	428	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+814.7s	429	
+814.7s	430	✓ Baseline Results (LR=0.0001):
+814.7s	431	   AUC: 0.9996 | F1: 0.9829 | Accuracy: 0.9837
+814.7s	432	
+814.7s	433	======================================================================
+814.7s	434	STAGE 2: Ablation Study with FocalLoss
+814.7s	435	======================================================================
+814.7s	436	
+814.7s	437	Testing FocalLoss with Alpha=0.25, Gamma=1.0...
+814.7s	438	Using CUDA
+885.0s	439	
+885.0s	440	Epoch 1/10, Loss: 0.0435
+885.0s	441	Validation Metrics:
+893.0s	442	  F1: 0.9607, AUC: 0.9994, Acc: 0.9619
+893.0s	443	  ✓ Best model saved (AUC: 0.9994)
+963.4s	444	
+963.4s	445	Epoch 2/10, Loss: 0.0137
+963.4s	446	Validation Metrics:
+971.6s	447	  F1: 0.9719, AUC: 0.9995, Acc: 0.9730
+971.6s	448	  ✓ Best model saved (AUC: 0.9995)
+1041.1s	449	
+1041.1s	450	Epoch 3/10, Loss: 0.0076
+1041.1s	451	Validation Metrics:
+1048.6s	452	  F1: 0.9721, AUC: 0.9995, Acc: 0.9726
+9.7s	453	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+9.7s	454	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+9.7s	455	0.00s - to python to disable frozen modules.
+9.7s	456	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+10.4s	457	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.4s	458	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.4s	459	0.00s - to python to disable frozen modules.
+10.4s	460	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+30.6s	461	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+30.7s	462	
+  0%|          | 0.00/44.7M [00:00<?, ?B/s]
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+30.8s	463	
+ 34%|███▍      | 15.1M/44.7M [00:00<00:00, 157MB/s]
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+30.8s	464	
+ 73%|███████▎  | 32.8M/44.7M [00:00<00:00, 173MB/s]
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	465	
+100%|██████████| 44.7M/44.7M [00:00<00:00, 178MB/s]
+30.9s	466	
+30.9s	467	
+30.4s	468	
+30.4s	469	======================================================================
+30.4s	470	STAGE 1: ResNet-18 + SE Blocks with CrossEntropyLoss
+30.4s	471	======================================================================
+30.4s	472	Using CUDA
+30.6s	473	Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth
+92.6s	474	
+92.6s	475	Epoch 1/10, Loss: 0.2637
+92.6s	476	Validation Metrics:
+103.3s	477	  F1: 0.9717, AUC: 0.9994, Acc: 0.9728
+103.3s	478	  ✓ Best model saved (AUC: 0.9994)
+173.5s	479	
+173.5s	480	Epoch 2/10, Loss: 0.0831
+173.5s	481	Validation Metrics:
+181.1s	482	  F1: 0.9734, AUC: 0.9996, Acc: 0.9739
+181.1s	483	  ✓ Best model saved (AUC: 0.9996)
+251.0s	484	
+251.0s	485	Epoch 3/10, Loss: 0.0564
+251.0s	486	Validation Metrics:
+259.0s	487	  F1: 0.9754, AUC: 0.9996, Acc: 0.9761
+328.8s	488	
+328.8s	489	Epoch 4/10, Loss: 0.0498
+328.8s	490	Validation Metrics:
+337.0s	491	  F1: 0.9747, AUC: 0.9995, Acc: 0.9754
+407.3s	492	
+407.3s	493	Epoch 5/10, Loss: 0.0275
+407.3s	494	Validation Metrics:
+414.9s	495	  F1: 0.9705, AUC: 0.9996, Acc: 0.9713
+485.3s	496	
+485.3s	497	Epoch 6/10, Loss: 0.0326
+485.3s	498	Validation Metrics:
+493.0s	499	  F1: 0.9752, AUC: 0.9996, Acc: 0.9757
+563.4s	500	
+563.4s	501	Epoch 7/10, Loss: 0.0248
+563.4s	502	Validation Metrics:
+571.0s	503	  F1: 0.9752, AUC: 0.9994, Acc: 0.9757
+640.8s	504	
+640.8s	505	Epoch 8/10, Loss: 0.0179
+640.8s	506	Validation Metrics:
+648.5s	507	  F1: 0.9744, AUC: 0.9992, Acc: 0.9754
+718.4s	508	
+718.4s	509	Epoch 9/10, Loss: 0.0286
+718.4s	510	Validation Metrics:
+726.0s	511	  F1: 0.9777, AUC: 0.9996, Acc: 0.9781
+796.5s	512	
+796.5s	513	Epoch 10/10, Loss: 0.0187
+796.5s	514	Validation Metrics:
+804.5s	515	  F1: 0.9784, AUC: 0.9997, Acc: 0.9793
+804.5s	516	  ✓ Best model saved (AUC: 0.9997)
+804.5s	517	
+804.5s	518	Final Test Metrics (Before Loading Best Model):
+810.4s	519	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+810.4s	520	
+810.4s	521	Loading best model...
+810.4s	522	
+810.4s	523	Final Test Metrics (Best Model):
+814.7s	524	  F1: 0.9829, AUC: 0.9996, Acc: 0.9837
+814.7s	525	
+814.7s	526	✓ Baseline Results (LR=0.0001):
+814.7s	527	   AUC: 0.9996 | F1: 0.9829 | Accuracy: 0.9837
+814.7s	528	
+814.7s	529	======================================================================
+814.7s	530	STAGE 2: Ablation Study with FocalLoss
+814.7s	531	======================================================================
+814.7s	532	
+814.7s	533	Testing FocalLoss with Alpha=0.25, Gamma=1.0...
+814.7s	534	Using CUDA
+885.0s	535	
+885.0s	536	Epoch 1/10, Loss: 0.0435
+885.0s	537	Validation Metrics:
+893.0s	538	  F1: 0.9607, AUC: 0.9994, Acc: 0.9619
+893.0s	539	  ✓ Best model saved (AUC: 0.9994)
+963.4s	540	
+963.4s	541	Epoch 2/10, Loss: 0.0137
+963.4s	542	Validation Metrics:
+971.6s	543	  F1: 0.9719, AUC: 0.9995, Acc: 0.9730
+971.6s	544	  ✓ Best model saved (AUC: 0.9995)
+1041.1s	545	
+1041.1s	546	Epoch 3/10, Loss: 0.0076
+1041.1s	547	Validation Metrics:
+1048.6s	548	  F1: 0.9721, AUC: 0.9995, Acc: 0.9726
+1119.1s	549	
+1119.1s	550	Epoch 4/10, Loss: 0.0062
+1119.1s	551	Validation Metrics:
+1126.7s	552	  F1: 0.9763, AUC: 0.9995, Acc: 0.9776
+
+ResNet-18 with Squeeze-and-Excitation Blocks Results
+======================================================================
+
+STAGE 1: BASELINE (CrossEntropyLoss)
+----------------------------------------------------------------------
+Learning Rate: 0.0001
+Test AUC: 0.9996
+Test F1 (macro): 0.9829
+Test Accuracy: 0.9837
+
+STAGE 2: FOCAL LOSS ABLATION STUDY
+----------------------------------------------------------------------
+Alpha      Gamma      Test AUC        Test F1         Test Acc       
+----------------------------------------------------------------------
+0.25       1.0        0.9995          0.9809          0.9815         
+0.25       2.0        0.9994          0.9816          0.9826         
+0.25       5.0        0.9994          0.9814          0.9819         
+0.50       1.0        0.9996          0.9820          0.9826         
+0.50       2.0        0.9994          0.9848          0.9856         
+0.50       5.0        0.9994          0.9809          0.9815         
+1.00       1.0        0.9996          0.9845          0.9844         
+1.00       2.0        0.9996          0.9793          0.9800         
+1.00       5.0        0.9996          0.9765          0.9770         
+
+----------------------------------------------------------------------
+BEST FOCAL LOSS CONFIG: Alpha=0.5, Gamma=1.0
+Test AUC: 0.9996
+Test F1: 0.9820
+Test Accuracy: 0.9826
+
+======================================================================
+FINAL COMPARISON: CrossEntropyLoss vs FocalLoss
+======================================================================
+CrossEntropyLoss (Baseline):
+  AUC: 0.9996, F1: 0.9829, Acc: 0.9837
+
+FocalLoss (Best Config: Alpha=0.5, Gamma=1.0):
+  AUC: 0.9996, F1: 0.9820, Acc: 0.9826
+
+Improvement:
+  AUC: +0.01%
+  F1:  -0.09%
+  Acc: -0.11%
+
+
+  
