@@ -374,5 +374,103 @@ def main():
     print(f"\n✅ Results saved to '{results_file}'")
 
 
+def main_ablation():
+    import shutil
+
+    IMG_DIR = "A3_Dataset"
+    TRAIN_CSV = "A3_Dataset/train.csv"
+    VAL_CSV = "A3_Dataset/validation.csv"
+    TEST_CSV = "A3_Dataset/test.csv"
+    EPOCHS = 10
+    LR = 1e-4
+
+    results_file = "sne_ablation_results.txt"
+    best_overall_val_auc = -1
+    best_config_name = None
+    global_best_model_path = "best_sne_ablation_model.pth"
+
+    with open(results_file, "w") as f:
+        f.write("SnE Ablation Study Results\n")
+        f.write("=" * 75 + "\n\n")
+        f.write(f"{'Config':<30} {'Val AUC':<12} {'Test AUC':<12} {'Test F1':<12} {'Test Acc':<12}\n")
+        f.write("-" * 75 + "\n")
+
+    # (use_focal, alpha, gamma, config_name)
+    configs = [
+        (False, None,  None, "CE_baseline"),
+        (True,  0.25,  1.0,  "Focal_a0.25_g1.0"),
+        (True,  0.25,  2.0,  "Focal_a0.25_g2.0"),
+        (True,  0.25,  5.0,  "Focal_a0.25_g5.0"),
+        (True,  0.50,  1.0,  "Focal_a0.50_g1.0"),
+        (True,  0.50,  2.0,  "Focal_a0.50_g2.0"),
+        (True,  0.50,  5.0,  "Focal_a0.50_g5.0"),
+        (True,  1.00,  1.0,  "Focal_a1.00_g1.0"),
+        (True,  1.00,  2.0,  "Focal_a1.00_g2.0"),
+        (True,  1.00,  5.0,  "Focal_a1.00_g5.0"),
+    ]
+
+    for use_focal, alpha, gamma, config_name in configs:
+        print(f"\n{'='*75}")
+        if not use_focal:
+            print(f"Config: {config_name}  (CrossEntropyLoss)")
+        else:
+            print(f"Config: {config_name}  (FocalLoss  alpha={alpha}  gamma={gamma})")
+        print("=" * 75)
+
+        run_model_path = f"sne_ablation_{config_name}.pth"
+
+        kwargs = {"use_focal": use_focal, "lr": LR}
+        if use_focal:
+            kwargs["focal_alpha"] = alpha
+            kwargs["focal_gamma"] = gamma
+
+        model = ResNetSEClassifier(
+            IMG_DIR, TRAIN_CSV, VAL_CSV, TEST_CSV,
+            batch_size=32,
+            num_epochs=EPOCHS,
+            **kwargs
+        )
+        # Give each run its own save path so runs never overwrite each other
+        model.best_model_path = run_model_path
+        model.best_auc = -1
+
+        model.fit(num_epochs=EPOCHS)
+
+        # best_auc holds the best *validation* AUC seen during this run
+        run_val_auc = model.best_auc
+
+        # Load best checkpoint for this config and evaluate on test set
+        test_f1, test_auc, test_acc = model.test()
+
+        print(f"\nConfig {config_name}:")
+        print(f"  Val AUC (best): {run_val_auc:.4f} | Test AUC: {test_auc:.4f} | F1: {test_f1:.4f} | Acc: {test_acc:.4f}")
+
+        with open(results_file, "a") as f:
+            f.write(f"{config_name:<30} {run_val_auc:<12.4f} {test_auc:<12.4f} {test_f1:<12.4f} {test_acc:<12.4f}\n")
+
+        # Keep track of the globally best model (by validation AUC)
+        if run_val_auc > best_overall_val_auc:
+            best_overall_val_auc = run_val_auc
+            best_config_name = config_name
+            shutil.copy(run_model_path, global_best_model_path)
+            print(f"  ✓ New global best — copied to '{global_best_model_path}'")
+
+    print(f"\n{'='*75}")
+    print("ABLATION COMPLETE")
+    print(f"  Best config : {best_config_name}")
+    print(f"  Best val AUC: {best_overall_val_auc:.4f}")
+    print(f"  Model saved : {global_best_model_path}")
+
+    with open(results_file, "a") as f:
+        f.write("\n" + "=" * 75 + "\n")
+        f.write("BEST OVERALL CONFIG\n")
+        f.write("-" * 75 + "\n")
+        f.write(f"Config   : {best_config_name}\n")
+        f.write(f"Val AUC  : {best_overall_val_auc:.4f}\n")
+        f.write(f"Model    : {global_best_model_path}\n")
+
+    print(f"\n✅ Results saved to '{results_file}'")
+
+
 if __name__ == '__main__':
-    main()
+    main_ablation()
